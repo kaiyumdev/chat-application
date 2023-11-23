@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "../features/api/apiSlice";
-import authReducer from "../features/api/auth/authSlice";
-import conversationsSlice from "../features/api/conversations/conversationsSlice";
+import authReducer from "../features/auth/authSlice";
+import conversationsSlice from "../features/conversations/conversationsSlice";
 import messagesReducer from "../features/messages/messagesSlice";
 
 export const store = configureStore({
