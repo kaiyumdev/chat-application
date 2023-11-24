@@ -1,7 +1,5 @@
+import { apiSlice } from "../api/apiSlice";
 import { userLoggedIn } from "./authSlice";
-
-/* eslint-disable no-unused-vars */
-const { apiSlice } = require("../api/apiSlice");
 
 export const authApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -14,6 +12,7 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
+
           localStorage.setItem(
             "auth",
             JSON.stringify({
@@ -21,13 +20,16 @@ export const authApi = apiSlice.injectEndpoints({
               user: result.data.user,
             })
           );
+
           dispatch(
             userLoggedIn({
               accessToken: result.data.accessToken,
               user: result.data.user,
             })
           );
-        } catch (error) {}
+        } catch (err) {
+          // do nothing
+        }
       },
     }),
     login: builder.mutation({
@@ -36,26 +38,31 @@ export const authApi = apiSlice.injectEndpoints({
         method: "POST",
         body: data,
       }),
+
+      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+        try {
+          const result = await queryFulfilled;
+
+          localStorage.setItem(
+            "auth",
+            JSON.stringify({
+              accessToken: result.data.accessToken,
+              user: result.data.user,
+            })
+          );
+
+          dispatch(
+            userLoggedIn({
+              accessToken: result.data.accessToken,
+              user: result.data.user,
+            })
+          );
+        } catch (err) {
+          // do nothing
+        }
+      },
     }),
-    async onQueryStarted(arg, { queryFulfilled, dispatch }) {
-      try {
-        const result = await queryFulfilled;
-        localStorage.setItem(
-          "auth",
-          JSON.stringify({
-            accessToken: result.data.accessToken,
-            user: result.data.user,
-          })
-        );
-        dispatch(
-          userLoggedIn({
-            accessToken: result.data.accessToken,
-            user: result.data.user,
-          })
-        );
-      } catch (error) {}
-    },
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = authApi;
+export const { useLoginMutation, useRegisterMutation } = authApi;
