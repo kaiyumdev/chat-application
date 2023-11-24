@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "../features/api/apiSlice";
-import authReducer from "../features/auth/authSlice";
-import conversationsSlice from "../features/conversations/conversationsSlice";
-import messagesReducer from "../features/messages/messagesSlice";
+import authSliceReducer from "../features/auth/authSlice";
+import conversationsSliceReducer from "../features/conversations/conversationsSlice";
+import messagesSliceReducer from "../features/messages/messagesSlice";
 
 export const store = configureStore({
   reducer: {
-    [apiSlice.reducerPath]: [apiSlice.reducer],
-    auth: authReducer,
-    conversations: conversationsSlice,
-    messages: messagesReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    auth: authSliceReducer,
+    conversations: conversationsSliceReducer,
+    messages: messagesSliceReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddlewares) =>
