@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-const { apiSlice } = require("../api/apiSlice");
+import { apiSlice } from "../api/apiSlice";
 
-const conversationsApi = apiSlice.injectEndpoints({
+export const conversationsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getConversations: builder.query({
       query: (email) =>
