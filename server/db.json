@@ -2,15 +2,9 @@
   "users": [
     {
       "email": "mdkaioumislam684@gmail.com",
-      "password": "$2a$10$8pt9kmK8xRqQa3Ryk3AMeey2a.AvYg/DTSsST.DDhtaQ6mapwhrmK",
+      "password": "$2a$10$8nu.FlzWInbdOp0YIjbYFOkKBWRG7PIo4nxwk.unguk8Wj.FRtKMW",
       "name": "Abdul Kaiyum Fahim",
       "id": 1
-    },
-    {
-      "email": "arif@gmail.com",
-      "password": "$2a$10$KkRjT3sBTqJWXpQmfv5LYeJjdfNQ82KY0N3mp.jkeRz074RYxeeOe",
-      "name": "arif",
-      "id": 2
     }
   ],
   "conversations": [

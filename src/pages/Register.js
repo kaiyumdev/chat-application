@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
-import logoImage from "../assets/images/chat-application.svg";
+import logoImage from "../assets/images/lws-logo-dark.svg";
 import { useEffect, useState } from "react";
 import { useRegisterMutation } from "../features/auth/authApi";
 import Error from "../components/ui/Error";
@@ -19,8 +19,6 @@ export default function Register() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(data);
-    console.log(responseError);
     if (responseError?.data) {
       setError(responseError.data);
     }
