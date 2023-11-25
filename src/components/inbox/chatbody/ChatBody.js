@@ -28,7 +28,7 @@ export default function ChatBody() {
       <>
         <ChatHead
           avatar="https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083383__340.jpg"
-          name="Akash Ahmed"
+          name="Abdul Kaiyum"
         />
         <Messages messages={messages} />
         <Options />
