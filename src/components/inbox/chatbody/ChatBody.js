@@ -10,7 +10,6 @@ export default function ChatBody() {
   const { id } = useParams();
   const { data: messages, isLoading, isError, error } = useGetMessagesQuery(id);
 
-  // decide what to render
   let content = null;
 
   if (isLoading) {
