@@ -17,7 +17,6 @@ export default function ChatItems() {
     error,
   } = useGetConversationsQuery(email);
 
-  // decide what to render
   let content = null;
 
   if (isLoading) {
