@@ -11,7 +11,6 @@ export default function ChatBody() {
   const { data: messages, isLoading, isError, error } = useGetMessagesQuery(id);
 
   // decide what to render
-  // decide what to render
   let content = null;
 
   if (isLoading) {
